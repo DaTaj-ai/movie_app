@@ -22,7 +22,6 @@ class AutoImageCarousel extends StatefulWidget {
   State<AutoImageCarousel> createState() => _AutoImageCarouselState();
 }
 
-// flag this widget as needing to be rebuilt again and i have to optimize it
 class _AutoImageCarouselState extends State<AutoImageCarousel> {
   int _currentIndex = 0;
 
@@ -49,7 +48,6 @@ class _AutoImageCarouselState extends State<AutoImageCarousel> {
           );
         }
 
-        // Error state
         if (state is TrendingError) {
           return SizedBox(
             height: widget.height,
@@ -67,13 +65,13 @@ class _AutoImageCarouselState extends State<AutoImageCarousel> {
             );
           }
 
-          final double numberBoxWidth = 70;
+          final double numberBoxWidth = 200;
           final double numberBoxHeight = 140;
-          final double leftHang = 0;
+          final double leftHang = -75;
           final double verticalOverlap = 80;
 
           return SizedBox(
-            height: widget.height + numberBoxHeight * 0.6,
+            height: widget.height + numberBoxHeight * 0.4,
             child: CarouselSlider.builder(
               itemCount: movies.length,
               options: CarouselOptions(
@@ -93,7 +91,7 @@ class _AutoImageCarouselState extends State<AutoImageCarousel> {
 
                 return SizedBox(
                   width: widget.width,
-                  height: widget.height + numberBoxHeight * 0.8,
+                  height: widget.height + numberBoxHeight * 0.6,
                   child: Stack(
                     clipBehavior: Clip.none,
                     children: [
@@ -162,7 +160,6 @@ class _AutoImageCarouselState extends State<AutoImageCarousel> {
           );
         }
 
-        // Fallback (TrendingInitial or unknown)
         return SizedBox(height: widget.height);
       },
     );

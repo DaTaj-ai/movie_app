@@ -36,12 +36,11 @@ class HomeScreen extends StatelessWidget {
                 controller: TextEditingController(),
                 onChanged: (value) {},
               ),
-              SizedBox(height: 24.0),
               AutoImageCarousel(
                 height: 210,
                 width: 144.6,
               ),
-              SizedBox(height: 40.0),
+              SizedBox(height: 12.0),
 
               BlocBuilder<MovieCubit, MovieState>(
                 builder: (context, state) {
