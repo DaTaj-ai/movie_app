@@ -5,9 +5,9 @@ import 'package:movie_app/features/movies/presentation/pages/main_layout.dart';
 import 'package:provider/provider.dart';
 
 import '../../features/movies/domain/usecases/get_movies.dart';
-import '../../features/movies/presentation/cubit/Trending_cubit/movies_cubit.dart';
-import '../../features/movies/presentation/cubit/buttom_navigation_bar_cubit/bnb_cubit.dart';
-import '../../features/movies/presentation/cubit/movie_cubit/movie_cubit.dart';
+import '../../features/movies/presentation/cubit/bottom_navigation_bar_cubit/bottom_navigation_bar_cubit.dart';
+import '../../features/movies/presentation/cubit/movie_list_cubit/movie_list_cubit.dart';
+import '../../features/movies/presentation/cubit/trending_movie_cubit/trending_movie_cubit.dart';
 import '../di/di.dart' as di;
 
 
@@ -20,14 +20,14 @@ class MyApp extends StatelessWidget {
       create: (_) => di.sl<GetMovies>(),
       child: MultiBlocProvider(
         providers: [
-          BlocProvider<NavCubit>(
-            create: (context) => di.sl<NavCubit>(),
+          BlocProvider<BottomNavBarCubit>(
+            create: (context) => di.sl<BottomNavBarCubit>(),
           ),
           BlocProvider<TrendingCubit>(
             create: (context) => di.sl<TrendingCubit>()..fetchTrending(),
           ),
-          BlocProvider<MovieCubit>(
-            create: (context) => di.sl<MovieCubit>(),
+          BlocProvider<MovieListCubit>(
+            create: (context) => di.sl<MovieListCubit>(),
           ),
         ],
         child: MaterialApp(

@@ -1,6 +1,3 @@
-// lib/data/models/movie_model.dart
-
-
 import '../../domain/entities/movie_entity.dart';
 
 class MovieModel {

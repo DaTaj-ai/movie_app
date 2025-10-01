@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/constants/app_colors.dart';
-import '../cubit/buttom_navigation_bar_cubit/bnb_cubit.dart';
-import '../cubit/buttom_navigation_bar_cubit/bub_state.dart';
+import '../cubit/bottom_navigation_bar_cubit/bottom_navigation_bar_cubit.dart';
+import '../cubit/bottom_navigation_bar_cubit/bottom_navigation_bar_state.dart';
+
 
 class CustomSearchBar extends StatelessWidget {
   final TextEditingController controller;
@@ -17,7 +18,7 @@ class CustomSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<NavCubit, NavState>(
+    return BlocBuilder<BottomNavBarCubit, BottomNavBarState>(
         builder: (context, state) {
       return Padding(
         padding: const EdgeInsets.only(top:  24.0 , left: 24.0 , right: 24.0),
@@ -31,7 +32,7 @@ class CustomSearchBar extends StatelessWidget {
               IconButton(
                 icon: Icon(Icons.search, color: AppColors.grayLight ),
                 onPressed: () {
-                  context.read<NavCubit>().changeTab(1);
+                  context.read<BottomNavBarCubit>().changeTab(1);
                 },
               ),
             ],

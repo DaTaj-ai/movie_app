@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 
-class NavState extends Equatable {
+class BottomNavBarState extends Equatable {
   final int currentIndex;
 
-  const NavState(this.currentIndex);
+  const BottomNavBarState(this.currentIndex);
 
   @override
   List<Object?> get props => [currentIndex];

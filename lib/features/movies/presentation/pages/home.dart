@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/core/constants/app_colors.dart';
-
-import '../../../../core/widget/tap_bar.dart';
-
-import '../cubit/movie_cubit/movie_cubit.dart';
-import '../cubit/movie_cubit/movie_state.dart';
+import '../../../../core/widget/reusable_tab_bar.dart';
+import '../cubit/movie_list_cubit/movie_list_cubit.dart';
+import '../cubit/movie_list_cubit/movie_list_state.dart';
 import '../widgets/movie_grid.dart';
 import '../widgets/movie_row.dart';
 import '../widgets/search_bar.dart';
@@ -17,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       // provide the cubit
-      create: (_) => MovieCubit(context.read())..fetchInitial(),
+      create: (_) => MovieListCubit(context.read())..fetchInitial(),
       child: Scaffold(
         body: SingleChildScrollView(
           child: Column(
@@ -42,9 +40,9 @@ class HomeScreen extends StatelessWidget {
               ),
               SizedBox(height: 12.0),
 
-              BlocBuilder<MovieCubit, MovieState>(
+              BlocBuilder<MovieListCubit, MovieListState>(
                 builder: (context, state) {
-                  final cubit = context.read<MovieCubit>();
+                  final cubit = context.read<MovieListCubit>();
 
                   return ReusableTabBar(
                     tabs: const [
@@ -62,7 +60,7 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
 
-              BlocBuilder<MovieCubit, MovieState>(
+              BlocBuilder<MovieListCubit, MovieListState>(
                 builder: (context, state) {
                   if (state.isLoading && state.movies.isEmpty) {
                     return const Center(

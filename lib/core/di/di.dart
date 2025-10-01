@@ -1,14 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:movie_app/features/movies/presentation/cubit/buttom_navigation_bar_cubit/bnb_cubit.dart';
-import 'package:movie_app/features/movies/presentation/cubit/movie_cubit/movie_cubit.dart';
-
+import 'package:movie_app/features/movies/presentation/cubit/bottom_navigation_bar_cubit/bottom_navigation_bar_cubit.dart';
 import '../../features/movies/data/datasource/remote_movie_datasource/remote_movie_datasource.dart';
 import '../../features/movies/data/repository/movie_repository_impl.dart';
 import '../../features/movies/domain/repository/movie_repository_interface.dart';
 import '../../features/movies/domain/usecases/get_movies.dart';
 import '../../features/movies/domain/usecases/get_trending_movies.dart';
-import '../../features/movies/presentation/cubit/Trending_cubit/movies_cubit.dart';
+import '../../features/movies/presentation/cubit/movie_list_cubit/movie_list_cubit.dart';
+import '../../features/movies/presentation/cubit/trending_movie_cubit/trending_movie_cubit.dart';
 import '../constants/api_constants.dart';
 
 final GetIt sl = GetIt.instance;
@@ -35,6 +34,6 @@ Future<void> init() async {
   sl.registerLazySingleton<GetTrendingMovies>(() => GetTrendingMovies(sl()));
   sl.registerLazySingleton<GetMovies>(() => GetMovies(sl()));
   sl.registerFactory<TrendingCubit>(() => TrendingCubit(getTrendingMovies: sl()));
-  sl.registerFactory<MovieCubit>(() => MovieCubit(sl()));
-  sl.registerFactory<NavCubit>(() => NavCubit());
+  sl.registerFactory<MovieListCubit>(() => MovieListCubit(sl()));
+  sl.registerFactory<BottomNavBarCubit>(() => BottomNavBarCubit());
 }

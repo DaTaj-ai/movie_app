@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 
 import '../../../domain/entities/movie_entity.dart';
 
-class MovieState extends Equatable {
+class MovieListState extends Equatable {
   final List<Movie> movies;
   final int page;
   final int totalPages;
@@ -11,7 +11,7 @@ class MovieState extends Equatable {
   final String? error;
   final int selectedIndex;
 
-  const MovieState({
+  const MovieListState({
     required this.movies,
     required this.page,
     required this.totalPages,
@@ -21,7 +21,7 @@ class MovieState extends Equatable {
     required this.selectedIndex,
   });
 
-  factory MovieState.initial() => const MovieState(
+  factory MovieListState.initial() => const MovieListState(
     movies: [],
     page: 0,
     totalPages: 1,
@@ -31,7 +31,7 @@ class MovieState extends Equatable {
     selectedIndex: 0,
   );
 
-  MovieState copyWith({
+  MovieListState copyWith({
     List<Movie>? movies,
     int? page,
     int? totalPages,
@@ -40,7 +40,7 @@ class MovieState extends Equatable {
     String? error,
     int? selectedIndex,
   }) {
-    return MovieState(
+    return MovieListState(
       movies: movies ?? this.movies,
       page: page ?? this.page,
       totalPages: totalPages ?? this.totalPages,

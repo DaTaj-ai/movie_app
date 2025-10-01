@@ -6,7 +6,6 @@ import '../../models/movie_page_model.dart';
 abstract class MovieRemoteDataSource {
   Future<List<MovieModel>> fetchTrendingMovies();
   Future<MoviePageModel> fetchMovies({required String category, required int page});
-  Future<MovieModel> fetchMovieDetails({required int id});
 }
 
 class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
@@ -38,7 +37,7 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
     required int page,
   }) async {
     final response = await dio.get(
-      '/movie/$category', // e.g. "popular", "upcoming", "top_rated"
+      '/movie/$category',
       queryParameters: {
         'page': page,
         'language': 'en-US',
@@ -48,13 +47,5 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
     return MoviePageModel.fromJson(response.data as Map<String, dynamic>);
   }
 
-
-  @override
-  Future<MovieModel> fetchMovieDetails({required int id}) async {
-    final response = await dio.get('$id',
-        options: Options(headers: {'Accept': 'application/json'})
-    );
-    return MovieModel.fromJson(response.data as Map<String,dynamic>);
-  }
 
 }

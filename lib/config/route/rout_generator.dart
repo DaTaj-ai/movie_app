@@ -4,7 +4,6 @@ import 'package:movie_app/config/route/routes.dart';
 import '../../features/movies/presentation/pages/home.dart';
 import '../../features/movies/presentation/pages/main_layout.dart';
 import '../../features/movies/presentation/pages/search.dart';
-import '../../features/movies/presentation/pages/splash_screen.dart';
 import '../../features/movies/presentation/pages/watch_list.dart';
 
 class RouteGenerator {
@@ -12,8 +11,6 @@ class RouteGenerator {
     switch (settings.name) {
       case AppRoutes.mainLayout:
         return MaterialPageRoute(builder: (context) => const MainLayout());
-      case AppRoutes.splash:
-        return MaterialPageRoute(builder: (context) => const SplashScreen());
       case AppRoutes.home :
         return MaterialPageRoute(builder: (context) => const HomeScreen());
       case AppRoutes.watch_list:

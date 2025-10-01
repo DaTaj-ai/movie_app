@@ -20,9 +20,4 @@ class MovieRepositoryImpl implements MovieRepository {
     return model.toEntity();
   }
 
-  @override
-  Future<Movie> getMovieDetails(int id) async {
-    final model = await remoteDataSource.fetchMovieDetails(id: id);
-    return model.toEntity();
-  }
 }

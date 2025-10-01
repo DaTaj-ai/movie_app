@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../core/widget/App_network_image.dart';
+import '../../../../core/widget/app_network_image.dart';
 import 'MovieDetailDialog.dart';
 import '../../domain/entities/movie_entity.dart';
 
@@ -131,7 +131,7 @@ class _ImageGridState extends State<ImageGrid> {
 
 
 // import 'package:flutter/material.dart';
-// import '../../../../core/widget/App_network_image.dart';
+// import '../../../../core/widget/app_network_image.dart';
 // import '../../domain/entities/movie_entity.dart';
 //
 // class ImageGrid extends StatelessWidget {

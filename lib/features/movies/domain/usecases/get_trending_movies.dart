@@ -1,4 +1,3 @@
-
 import '../entities/movie_entity.dart';
 import '../repository/movie_repository_interface.dart';
 

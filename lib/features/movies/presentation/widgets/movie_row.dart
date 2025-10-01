@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import '../../../../core/constants/api_constants.dart';
 import '../../../../core/constants/app_colors.dart';
-import '../../../../core/widget/App_network_image.dart';
-import '../cubit/Trending_cubit/movies_cubit.dart';
-import '../cubit/Trending_cubit/movies_state.dart';
+import '../../../../core/widget/app_network_image.dart';
+import '../cubit/trending_movie_cubit/trending_movie_cubit.dart';
+import '../cubit/trending_movie_cubit/trending_movie_state.dart';
 import 'MovieDetailDialog.dart';
 
 class AutoImageCarousel extends StatefulWidget {

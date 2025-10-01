@@ -3,7 +3,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../../domain/usecases/get_trending_movies.dart';
-import 'movies_state.dart';
+import 'trending_movie_state.dart';
 
 
 class TrendingCubit extends Cubit<TrendingState> {

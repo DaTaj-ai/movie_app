@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/constants/app_colors.dart';
-import 'package:movie_app/core/widget/App_network_image.dart';
+import 'package:movie_app/core/widget/app_network_image.dart';
 import 'package:movie_app/features/movies/domain/entities/movie_entity.dart';
 
 import '../../../../core/constants/api_constants.dart';
-import '../../../../core/widget/tap_bar.dart';
+import '../../../../core/widget/reusable_tab_bar.dart';
 
 class MovieDetailDialog extends StatelessWidget {
   final Movie movie;

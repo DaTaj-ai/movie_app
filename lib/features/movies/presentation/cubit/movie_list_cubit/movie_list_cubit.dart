@@ -1,15 +1,13 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../domain/usecases/get_movies.dart';
-import 'movie_state.dart';
+import 'movie_list_state.dart';
 
-class MovieCubit extends Cubit<MovieState> {
+class MovieListCubit extends Cubit<MovieListState> {
   final GetMovies getMovies;
 
-  // Keep categories here or inject them
   static const categories = ['now_playing', 'upcoming', 'top_rated', 'popular'];
 
-  MovieCubit(this.getMovies) : super(MovieState.initial()) {
-    // auto load first category
+  MovieListCubit(this.getMovies) : super(MovieListState.initial()) {
     fetchInitial();
   }
 
